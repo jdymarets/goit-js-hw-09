@@ -3,6 +3,11 @@ const refs = {
   stopBtn: document.querySelector('button[data-stop]'),
 };
 
+refs.startBtn.addEventListener('click', () =>
+  colorSwitcher.startChangeBGcolor()
+);
+refs.stopBtn.addEventListener('click', () => colorSwitcher.stopChangeBGcolor());
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
@@ -44,8 +49,3 @@ class ColorSwitcher {
 }
 
 const colorSwitcher = new ColorSwitcher();
-
-refs.startBtn.addEventListener('click', () =>
-  colorSwitcher.startChangeBGcolor()
-);
-refs.stopBtn.addEventListener('click', () => colorSwitcher.stopChangeBGcolor());
